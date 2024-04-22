@@ -9,11 +9,12 @@ const Question = ({ question,number, options, onSelect }) => {
   };
 
   return (
-    <div>
-      <h3>{number} - {question}</h3>
+    <div className="grid h-auto card bg-base-300 rounded-box px-12 m-3">
+      <h3 className="mt-5">{number} - {question}</h3>
       <form>
+     
         {options.map((option, index) => (
-          <label className="ml-2 mb-3" key={index} htmlFor={`option-${index}`}>
+          <label className="flex flex-row ml-2 my-5" key={index} htmlFor={`option-${index}`}>
             <input
               className="mr-4"
               type="radio"
@@ -26,6 +27,7 @@ const Question = ({ question,number, options, onSelect }) => {
             {option}
           </label>
         ))}
+      
       </form>
     </div>
   );
