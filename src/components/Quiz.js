@@ -1,3 +1,5 @@
+import styles from "./Quiz.module.css";
+
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchQuestions } from "../api";
@@ -46,7 +48,9 @@ const Quiz = () => {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className={styles.spinner} >
+    <span></span>
+  </div>;
   }
 
   if (!questions[currentQuestionIndex]) {
